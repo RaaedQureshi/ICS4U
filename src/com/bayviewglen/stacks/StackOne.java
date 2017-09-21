@@ -5,10 +5,12 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Stack;
 
+import com.bayviewglen.utils.ArrayStackAssignment;
+
 public class StackOne {
 
 	public static void main(String[] args) {
-		testInfix("data/stack.dat");
+	//	testInfix("data/stack.dat");
 		testPostfix("data/postfix.dat");
 
 	}
@@ -47,8 +49,8 @@ public class StackOne {
 	}
 
 	private static void evaluatePostfix(String[] string) {
-		Stack<String> operators = new Stack<String>();
-		Stack<Double> operands = new Stack <Double>();	
+		ArrayStackAssignment operators = new ArrayStackAssignment();
+		ArrayStackAssignment operands = new ArrayStackAssignment();	
 
 
 		final String OPERATORS = "()*+-/";
@@ -61,8 +63,8 @@ public class StackOne {
 			}
 			else {
 				String op = s;
-				double operand1 = operands.pop();
-				double operand2 = operands.pop();
+				double operand1 = (Double)operands.pop();
+				double operand2 = (Double)operands.pop();
 				if (op.equals("*")) {
 					operands.push(operand1 * operand2);	
 				}
@@ -80,6 +82,8 @@ public class StackOne {
 
 			}
 		}
+		System.out.println(operands.peek());
+		
 
 
 	}
