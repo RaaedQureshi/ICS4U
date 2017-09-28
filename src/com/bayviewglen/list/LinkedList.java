@@ -39,7 +39,7 @@ public class LinkedList {
 			addFirst(value);
 		} else if (index == numNodes - 1) {
 			add(value);
-
+			
 		} else if (index > 0 && index < numNodes - 1) {
 			for (int i = 0; i < index; i++) {
 				current = current.getLink();
@@ -139,7 +139,7 @@ public class LinkedList {
 	}
 	
 	public boolean booleanRemove (int o) {  //Removes the first occurrence of the specified element from this list, if it is present.
-		int [] arr = toArray();
+		int [] arr = toArray(); //Make an array of intnodes, find the index and then remove it.
 		int count = 0;
 		
 		while (count < 1) {
@@ -161,7 +161,7 @@ public class LinkedList {
 	}
 
 	public boolean removeLastOccurence(int o) {  //Removes the last occurrence of the specified element in this list (when traversing the list from head to tail).
-		int [] arr = toArray();
+		int [] arr = toArray();   //Make an array of intnodes, find the index and then remove it.
 		int count = 0;
 		while (count < 1) {
 		for (int i = arr.length-1; i >= 0; i--) {
