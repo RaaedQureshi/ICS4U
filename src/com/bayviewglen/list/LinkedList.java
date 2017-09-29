@@ -11,7 +11,7 @@ public class LinkedList {
 		numNodes = 0;
 	}
 
-	public void addFirst(int x) {  //Inserts the specified element at the beginning of this list.
+	public void addFirst(int x) {  //Inserts the specified element at the beginning of this list
 		head = new IntNode(x, head);
 		if (numNodes == 0)
 			tail = head;

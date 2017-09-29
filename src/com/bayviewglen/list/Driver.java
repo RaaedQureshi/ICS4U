@@ -10,7 +10,7 @@ public class Driver {
 		x.add(5);
 		x.add(7);
 		
-		/*x.add(0,5742);
+		x.add(0,5742);
 		x.add(2);
 		x.add(3);
 		x.add(8);
@@ -29,7 +29,7 @@ public class Driver {
 		x.remove(2);
 		x.booleanRemove(5742);
 		x.removeFirstOccurence(3);
-		x.removeLastOccurence(8);*/
+		x.removeLastOccurence(8);
 	    
 	    
 
