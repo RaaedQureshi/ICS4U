@@ -23,8 +23,8 @@ public class ContactDriver {
 	    	 last = keyboard.nextLine();
 	    	 System.out.println("Please enter the contacts number: ");
 	    	 phone = keyboard.nextLine();
-	    	 while (numbers.numberChecker(phone) == false)
-	    		 phone = keyboard.nextLine();
+	    	 phone = numbers.numberChecker(phone);
+	    	 
 	    	 numbers.addContact(last, first, phone);
 	    	 System.out.println(first + " " + last + " has been added.");
 	    	 numbers.menu();

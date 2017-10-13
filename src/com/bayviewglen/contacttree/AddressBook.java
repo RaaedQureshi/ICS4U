@@ -49,33 +49,42 @@ public class AddressBook {
 		System.out.println("These are your contacts: \n");
 		contacts.inorderTraversal(contacts.getRoot());
 	}
+	
+	public static String numberChecker(String input) { // checks valid phone number
+		int length = 10;
+		Scanner keyboard = new Scanner(System.in);
+		boolean valid = true;
+		String numbers = "0123456789";
 
-	public boolean numberChecker(String phone) {
-		boolean number = true;
-		String numbers = "1234567890";
-		for (int i = 0; i < phone.length() && number; i++) {
-			if (numbers.indexOf(phone.substring(i, i + 1)) < 0) {
-				number = false;
+		for (int i = 0; i < input.length() && valid == true; i++) {
+			if (numbers.indexOf(input.substring(i, i + 1)) == -1) {
+				valid = false;
 			}
 		}
-		if (phone.length() == 10 && number == true)
-			return true;
-		else {
-			Scanner keyboard = new Scanner(System.in);
-			number = true;
-			System.out.println("Please enter a number with 10 digits.");
-			while (phone.length() == 10 && number) {
-				phone = keyboard.nextLine();
-				for (int i = 0; i < phone.length() && number; i++) {
-					if (phone.substring(i, i + 1).indexOf(numbers) < 0) {
-						number = false;
-					}
+		if (input.length() != length) {
+			valid = false;
+		}
+
+		while (!valid) {
+			valid = true;
+			System.out.print("Please enter a 10-digit number: ");
+			input = keyboard.nextLine();
+
+			for (int i = 0; i < input.length() && valid == true; i++) {
+				if (numbers.indexOf(input.substring(i, i + 1)) == -1) {
+					valid = false;
 				}
 			}
-			return true;
+			if (input.length() != length) {
+				valid = false;
+			}
 		}
 
+		return input;
 	}
+
+
+	
 
 	public void menu() {
 		System.out.println("\n1: Add contact\n2: Display contacts\n3: Search\n4: Delete contact\n5: Exit");
