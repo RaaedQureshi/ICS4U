@@ -1,6 +1,6 @@
-package com.bayviewglen.arrays;
+package com.bayviewglen.contacttree;
 
-public class Contact implements Comparable {
+public class Contact implements Comparable<Contact> {
 	private String last = getLast();
 	private String first = getFirst();
 	private String phone;
@@ -23,6 +23,11 @@ public class Contact implements Comparable {
 		this.first = first;
 		this.phone = phone;
 	}
+	public Contact(String firstName, String lastName) {
+		this.first = firstName;
+		this.last = lastName;
+	}
+
 	public void setLast(String last) {
 		this.last = last;
 	}
@@ -39,13 +44,12 @@ public class Contact implements Comparable {
 		this.phone = phone;
 	}
 
+	
+
 	@Override
-	public int compareTo(Object o) {
-		Contact c = (Contact) o;
-		String a = this.last + this.first;
-		String b = c.last + c.first;
-		
-		return a.compareTo(b);
+	public int compareTo(Contact o) {  // Old compare to method.
+		return (this.getLast() + this.getFirst()).compareTo(o.getLast() + o.getFirst());
 	}
 
 }
+
