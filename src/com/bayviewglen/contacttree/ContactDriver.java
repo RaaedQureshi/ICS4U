@@ -21,12 +21,18 @@ public class ContactDriver {
 	    	 first = keyboard.nextLine();
 	    	 System.out.println("Please enter the contacts last name: ");
 	    	 last = keyboard.nextLine();
+	    	 if(numbers.exists(first, last)) {
+	    		 System.out.println("This contact already exists.");
+	    	 } else {
+	    		 
+	    	 
 	    	 System.out.println("Please enter the contacts number: ");
 	    	 phone = keyboard.nextLine();
 	    	 phone = numbers.numberChecker(phone);
 	    	 
 	    	 numbers.addContact(last, first, phone);
 	    	 System.out.println(first + " " + last + " has been added.");
+	    	 }
 	    	 numbers.menu();
 	     } else if(choice.equals("2")) {
 	    	 if (AddressBook.numContacts == 0) {

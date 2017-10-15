@@ -146,6 +146,38 @@ public class BinarySearchTree {
 		}
     }
 	
+	public boolean exist(String firstName, String lastName)  //Search through binary search tree for contact
+    {
+        Contact key = new Contact (firstName, lastName);
+        if (root == null) {
+			return false;
+        } else if (root.getData().compareTo(key) == 0) {
+        	return true;
+        } else {
+			return exist(root, key);
+		}
+    }
+	
+	private boolean exist(TreeNode current, Comparable <Contact> contact)  //Search through binary search tree for contact
+    {
+		if (contact.compareTo((Contact) current.getData()) == 0) {
+			return true;
+		} else if (contact.compareTo((Contact) current.getData()) < 0) {
+			if (current.getLeft() == null) {
+				return false;
+			} else {
+				return exist(current.getLeft(), contact);
+			}
+			} else{
+				if (current.getRight() == null) {
+					return false;
+			}else {
+			 return exist(current.getRight(), contact);
+			}
+			}
+		}
+    
+	
 	public boolean deleteBinarySearchTree (TreeNode current, Comparable<Contact> key) {  // Delete a contact from binary search tree
 		if (root == null)
 			return false;

@@ -50,6 +50,10 @@ public class AddressBook {
 		contacts.inorderTraversal(contacts.getRoot());
 	}
 	
+	public boolean exists(String first, String last) {
+		return contacts.exist(first, last);
+	}
+	
 	public static String numberChecker(String input) { // checks valid phone number
 		int length = 10;
 		Scanner keyboard = new Scanner(System.in);
