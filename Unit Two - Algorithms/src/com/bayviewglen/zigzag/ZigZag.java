@@ -5,7 +5,7 @@ import java.lang.reflect.Array;
 public class ZigZag {
 
 	public static void main(String[] args) {
-		int[] numbers = {1,7,4,9,9,0,1,3,4,2,7};
+		int[] numbers = {0,1,1,7,4,8,8,9,10,12,6,2,2,7};
 		int[] increasing = new int [numbers.length];
 		int[] decreasing = new int [numbers.length];
 	    increasing[0] = 1;

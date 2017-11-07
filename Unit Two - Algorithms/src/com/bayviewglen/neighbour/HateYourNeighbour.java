@@ -3,7 +3,7 @@ package com.bayviewglen.neighbour;
 public class HateYourNeighbour {
 
 	public static void main(String[] args) {
-		int [] donation = {3,9,1,10,7,4,29,7};
+		int [] donation = {10, 3, 2, 5, 7, 8};
 		
 		int [] firstSolution = new int [donation.length-1];
 		int [] secondSolution = new int [donation.length-1];
